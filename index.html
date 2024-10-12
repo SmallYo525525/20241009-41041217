@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記憶大考驗</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  
+<body>
+  <!-- 標題 -->
+  <h1>記憶大考驗</h1>
+  
+  <!-- 倒數計時欄位，預設隱藏 -->
+  <div id="timer" style="font-size: 1.5em; color: #333; margin-bottom: 20px; display: none;">
+     <span id="timeLeft">10</span> 秒
+  </div>
+
+  <!-- 兩個按鈕和下拉選單 -->
+  <div class="buttons">
+    <select id="imageType" onchange="changeImageType()">
+      <option value="動物" selected>動物</option>
+      <option value="恐龍">恐龍</option>
+      <option value="海賊王">海賊王</option> <!-- 新增海賊王選項 -->
+    </select>
+    <select id="gridSize" onchange="changeGridSize()" style="margin-left: 10px;">
+      <option value="2x2">2x2</option>
+      <option value="4x4" selected>4x4</option>
+      <option value="6x6">6x6</option> <!-- 新增6x6選項 -->
+    </select>
+    <button onclick="startGame()">開始遊戲</button>
+    <button onclick="flipAllToBack()" style="display: none;">全部翻到背面</button>
+    <button onclick="flipAllToFront()" style="display: none;">全部翻到正面</button>
+  </div>
+
+  <!-- 卡片容器 -->
+  <div class="cards-container" id="cards-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
